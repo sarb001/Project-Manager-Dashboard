@@ -3,6 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FaRotate } from "react-icons/fa6";
 import { GoAlert } from "react-icons/go";
 import { FiUsers } from "react-icons/fi";
+import LineCharts from "./LineChart";
 
 export const Dashboard = () => {
 
@@ -18,6 +19,7 @@ export const Dashboard = () => {
         <>
             <div className="px-12 py-4 grid grid-cols-[5fr_1fr]">
 
+            <div>
                 <div className="grid grid-cols-5 gap-4 ">
                     {Cards?.map(i => {
                         return (
@@ -31,11 +33,19 @@ export const Dashboard = () => {
                         )
                     })}
                 </div> 
+                <div>
+                    <LineCharts />
+                </div>
+            </div>
             
                 <div className="grid ">
                     <span> Team mood </span>  
                 </div>
 
+            </div>
+
+            <div>
+                <h3> Budget Status </h3>
             </div>
         </>
     )
