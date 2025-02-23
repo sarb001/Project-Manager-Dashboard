@@ -1,11 +1,13 @@
 
-import './App.css'
+import { Dashboard } from './components/Dashboard'
+import { Navbar } from './components/Navbar'
 
 function App() {
 
   return (
   <>
-    <h2> Main section is here  </h2> 
+    <Navbar />
+    <Dashboard />
   </>
   )
 }
