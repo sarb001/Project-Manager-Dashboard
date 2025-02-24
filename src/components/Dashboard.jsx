@@ -5,6 +5,7 @@ import { GoAlert } from "react-icons/go";
 import { FiUsers } from "react-icons/fi";
 import LineCharts from "./LineChart";
 import Piechart from "./PieChart";
+import BudgetCards from "./BudgetCards";
 
 export const Dashboard = () => {
 
@@ -48,6 +49,9 @@ export const Dashboard = () => {
 
             <div>
                 <h3> Budget Status </h3>
+                <div>
+                    <BudgetCards />
+                </div>
             </div>
         </>
     )
