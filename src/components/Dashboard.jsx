@@ -4,6 +4,7 @@ import { FaRotate } from "react-icons/fa6";
 import { GoAlert } from "react-icons/go";
 import { FiUsers } from "react-icons/fi";
 import LineCharts from "./LineChart";
+import Piechart from "./PieChart";
 
 export const Dashboard = () => {
 
@@ -35,6 +36,7 @@ export const Dashboard = () => {
                 </div> 
                 <div>
                     <LineCharts />
+                    <Piechart />
                 </div>
             </div>
             

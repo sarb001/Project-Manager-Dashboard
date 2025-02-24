@@ -1,6 +1,6 @@
 
 
-import {ResponsiveContainer , LineChart ,CartesianGrid ,XAxis  ,YAxis ,Tooltip ,Legend ,Line } from 'recharts';
+import { LineChart ,CartesianGrid ,XAxis  ,YAxis , Line } from 'recharts';
 
 const LineCharts = () => {
 
