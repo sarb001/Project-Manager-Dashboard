@@ -22,10 +22,10 @@ export const Dashboard = () => {
     ]
 
     const Cards = [
-        { icons :  <RxDashboard /> , counts : 5 , maintext : "Total Projects" },
+        { icons :  <RxDashboard /> , counts : 5 , maintext : "Total Projects"  },
         { icons :  <FaCheckCircle /> , counts :  1 , maintext : "Completed" },
         { icons :  <FaRotate />, counts : 3 , maintext : "Ongoing"},
-        { icons :  <GoAlert /> , counts : 1 , maintext : "Delayed" , bgcolor : "bg-[#9c405b]" },
+        { icons :  <GoAlert className = "text-[#e62e00] font-bold" /> , counts : 1 , maintext : "Delayed" , bgcolor : "bg-[#ff6666]" },
         { icons :  <FiUsers /> , counts : 5 , maintext : "Employees"},
     ]
 
@@ -36,19 +36,65 @@ export const Dashboard = () => {
         { id : 4 , text : "Filter"  , btnsizes : "grid-cols-[1fr_3fr]" , icon : <PiSortAscendingBold />  }
     ]
 
+    //      
+    const TeamCards = [
+        { id : 1 , name : "Andrea" , level : "UX Junior" , emoji : '😕' , emojidistance : "35px" },
+        { id : 2 , name : "Alvaro" , level : "Backend developer" , emoji : '😀' ,emojidistance : "100px" },
+        { id : 3 , name : "Juan" , level : "UX Senior"  , emoji : '🙂' ,emojidistance : "70px" },
+        { id : 4 , name : "Jose" , level : "Marketing"  , emoji : '😡' ,emojidistance : "10px" },
+        { id : 5 , name : "Maria" , level : "UX Junior" , emoji : '🤐' ,emojidistance : "50px" },
+    ]
+
+
     return (
         <>
-         <div>
+         <div className="grid grid-cols-[5fr_1fr] px-8 py-12">
                 <div>
+
+                    <div className = "grid grid-cols-5 gap-5">
+                        {Cards?.map(i => (
+                            <div key = {i?.counts} className = {`rounded-[4px] ${i.bgcolor ? i?.bgcolor : "bg-[#f2f2f2]"} px-4 py-6  my-8`}>
+                                 <div className="text-[#4dd2ff] text-2xl"> {i?.icons} </div>
+                                 <div className="text-3xl flex justify-center"> {i?.counts} </div>
+                                 <div className="text-[16px] flex justify-center mt-4"> {i?.maintext} </div>
+                            </div>
+                        ))}
+                    </div>
+
                     <div>
                         <LineCharts />
                         <Piechart />
                     </div>
                 </div>
             
-                <div className="grid ">
-                    <span> Team mood </span>  
+                <div>
+                    <div> Team mood </div>
+
+                    {/* <div className="grid grid-rows-5 gap-4">
+                    {TeamCards?.map(i => (
+                        <div key = {i?.id} className="grid grid-rows-[2fr_1fr] gap-3 bg-lime-300 px-4 py-2">
+
+                            <div className="grid grid-cols-2 gap-4">  
+                                <div> 
+                                    <img width={40} height={5} className="rounded-full"   src = "https://png.pngtree.com/png-clipart/20241209/original/pngtree-a-photo-of-confident-handsome-man-headshot-with-black-formal-suit-png-image_17738643.png" alt = "main-img" /> 
+                                </div>
+                                <div>
+                                    <div> {i?.name}  </div>
+                                    <div> {i?.level}  </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                 <div className ="absolute w-[180px] overflow-hidden border-[1px] border-gray-600  rounded-xl my-4"></div>
+                                 <div style = {{ position:'relative', top : 0 , left : `${i?.emojidistance}`  }}
+                                 >   {i?.emoji} 
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    </div>   */}
                 </div>
+
         </div>
 
         <div className = "bg-[#fafafa]">
