@@ -2,7 +2,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { GoAlert } from "react-icons/go";
 
 
-const BudgetCards = () => {
+export const BudgetCards = () => {
 
     const CardsData = [
         { id : 1, title : "Insurance App" , subtitle : "Verti" ,TotalBudget : "70,000" , Profit : "2500" , Actualhours : "1,100" , soldHours : "100 hours over Budget" , BarPercentage : "100" , barcolor : "bg-red-800" , icon : <GoAlert />  },
@@ -15,15 +15,17 @@ const BudgetCards = () => {
         <div className="grid grid-cols-4 gap-4">
             {CardsData?.map(i => {{
                 return (
-                    <div key = {i?.id} className=" rounded-xl  bg-amber-300 px-4 py-2 m-3">
-                        <div>  
+                    <div key = {i?.id} className=" rounded-xl  bg-white px-4 py-2 m-3">
+
+                        <div className="grid grid-cols-[2fr_1fr] gap-4">  
                             <div>
                                 <div> {i?.title} </div>
                                 <div> {i?.subtitle} </div>
                             </div>
 
-                            <div className="w-12 h-[8vh] object-cover">
-                                <img  className="rounded-3xl w-full h-full" src = "https://img.freepik.com/free-photo/empty-road-desertic-landscape_414077-90.jpg?semt=ais_hybrid" />
+                            <div className="w-12 h-[8vh] object-cover flex items-center justify-center">
+                                <img  className="rounded-3xl w-full h-full" alt = "main-img"
+                                 src = "https://img.freepik.com/free-photo/empty-road-desertic-landscape_414077-90.jpg?semt=ais_hybrid" />
                             </div>
                         </div>
 
@@ -42,7 +44,7 @@ const BudgetCards = () => {
                             <Progressbar  width = {i?.BarPercentage} color = {i?.barcolor} />
                         </div>
 
-                        <div>
+                        <div className="grid grid-cols-[1fr_1.2fr] gap-4 text-xs ">
                             <div> Actual hours : {i?.Actualhours} </div>
                             <div> {i?.soldHours} </div>
                         </div>
@@ -54,8 +56,10 @@ const BudgetCards = () => {
 }
 
 
+
 export const Progressbar = ({width,color}) => {
     console.log('width -',width);
+    console.log('color -',color);
     return (
         <div className="w-full h-[3vh] bg-gray-400  rounded-xl">
           <div style = {{ width : `${width}%` }} className = {` ${color} h-full rounded-xl`}>        
@@ -63,5 +67,3 @@ export const Progressbar = ({width,color}) => {
         </div>
     )
 }
-
-export default BudgetCards;
